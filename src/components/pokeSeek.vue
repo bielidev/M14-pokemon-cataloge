@@ -1,7 +1,28 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const emit = defineEmits(['onSearch'])
+
+const query = ref("")
+
+const search = (e: any) => {
+    e.preventDefault(); 
+    emit('onSearch', query.value)
+}
+
+const reset = (e: any) => {
+    query.value = ""
+    search(e)
+}
+
+</script>
+
 <template>
-    <h1>Hazte con todos</h1>
-<form action="get">
-    <input type="search" placeholder="Introduce un pokemon" id="pokeSearch">
+   
+<form @submit="(e) => search(e)">
+    <input v-model="query" type="search" placeholder="Introduce un pokemon" id="pokeSearch">
+    <button type="submit">BUSCAR</button>
+    <button @click="(e) => reset(e)">REINICIAR</button>
 </form>
 
 </template>
