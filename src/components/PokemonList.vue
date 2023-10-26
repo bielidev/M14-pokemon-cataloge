@@ -39,7 +39,7 @@ import { computed, defineEmits, defineProps, onMounted, ref } from 'vue';
 </script>
 
 <template>
-    <h1>Lista de Pokemones</h1>
+    <h1>La Pokédex</h1>
     <table>
         <thead>
             <tr>

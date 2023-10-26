@@ -19,12 +19,28 @@ const detail = (value: number) => {
 
 <template>
     <div id="app">
-        <h1>Hazte con todos</h1>
+        <h1>¡Hazte con todos!</h1>
         <PokeSeek @on-search="(value) => search(value)" />
         <PokemonList :query="query" @on-detail="(pokemon) => detail(pokemon)" />
         <PokemonDetail :pokemon="detailPokemon" />
     </div>
 
 </template>
+
+<style>
+
+div#app{
+text-align: center;
+align-items: center;
+display: inline-block;
+}
+h1{
+    font-family: 'Pixelify Sans', sans-serif;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+
+}
+</style>
 
 

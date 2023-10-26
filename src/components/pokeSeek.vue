@@ -20,9 +20,18 @@ const reset = (e: any) => {
 <template>
    
 <form @submit="(e) => search(e)">
-    <input v-model="query" type="search" placeholder="Introduce un pokemon" id="pokeSearch">
+    <input class="form-control" v-model="query" type="search" placeholder="Introduce un pokemon" id="pokeSearch">
     <button type="submit">BUSCAR</button>
     <button @click="(e) => reset(e)">REINICIAR</button>
 </form>
 
 </template>
+
+<style>
+
+form{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+</style>
