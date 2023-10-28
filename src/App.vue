@@ -21,8 +21,15 @@ const detail = (value: number) => {
     <div id="app">
         <h1>¡Hazte con todos!</h1>
         <PokeSeek @on-search="(value) => search(value)" />
-        <PokemonList :query="query" @on-detail="(pokemon) => detail(pokemon)" />
-        <PokemonDetail :pokemon="detailPokemon" />
+        <div class="container">
+            <div class="list">
+                <PokemonList :query="query" @on-detail="(pokemon) => detail(pokemon)" />
+            </div>
+            <div>
+                <PokemonDetail :pokemon="detailPokemon" />
+            </div>
+        </div>
+        
     </div>
 
 </template>
@@ -40,6 +47,16 @@ h1{
     margin-bottom: 2rem;
     font-size: 2rem;
 
+}
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.list {
+    height: 75vh;
+    overflow: auto;
+    flex: 1;
 }
 </style>
 

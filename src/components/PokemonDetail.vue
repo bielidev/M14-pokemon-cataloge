@@ -27,13 +27,31 @@ watch(() => props.pokemon, async (newVal: number, oldVal: number) => {
 })
 </script>
 <template>
-    <h1>Detalle de Pokemon</h1>
-    <img :src="detailPokemon?.img" />
-    <div>
-        <h2>{{ detailPokemon?.name }}</h2>
-    <p>{{ detailPokemon?.weight }}</p>
-    <ul>
-        <li v-for="t in detailPokemon?.types">{{ t }}</li>
-    </ul>
-    </div>
+   <div>
+        <h1>Detalle de Pokemon</h1>
+        <img :src="detailPokemon?.img" />
+        <div class="detail-info">
+        <h2><span class="negrita">Nombre del Pokémon:</span> {{ detailPokemon?.name }}</h2>
+        <p class="negrita">Peso:{{ detailPokemon?.weight }}Kg</p>
+        <p class="negrita">Tipos:</p>
+        <ul> 
+            <li v-for="t in detailPokemon?.types">{{ t }}</li>
+        </ul>
+        </div>
+   </div>
 </template>
+
+<style scoped>
+.negrita {
+    font-weight: bolder;
+}
+h2{
+    text-transform: capitalize;
+}
+.detail-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+</style>

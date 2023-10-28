@@ -39,23 +39,25 @@ import { computed, defineEmits, defineProps, onMounted, ref } from 'vue';
 </script>
 
 <template>
-    <h1>La Pokédex</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Número</th>
-                <th>Imagen</th>
-                <th>Nombre</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="pokemon in filteredList" @click="detail(pokemon)">
-                <td>#{{ pokemon.pokeNumber }}</td>
-                <td><img :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokeNumber}.png`" /></td>
-                <td>{{ pokemon.name.toLocaleUpperCase() }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div>
+        <h1>La Pokédex</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="pokemon in filteredList" @click="detail(pokemon)">
+                    <td>#{{ pokemon.pokeNumber }}</td>
+                    <td><img :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokeNumber}.png`" /></td>
+                    <td>{{ pokemon.name.toLocaleUpperCase() }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </template>
 
 <style>
